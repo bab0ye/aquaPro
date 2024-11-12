@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ApplicationCard from '../components/ApplicationCard.astro';
+
+const applications = [
+  {
+    title: "Industrie minière",
+    description: "Solutions spécialisées pour le traitement des eaux dans le secteur minier.",
+    image: "/images/mine.jpg"
+  },
+  {
+    title: "Industrie pétrochimique",
+    description: "Traitement des eaux usées et solutions environnementales pour l'industrie pétrochimique.",
+    image: "/images/petro.jpg"
+  },
+  {
+    title: "Industrie agroalimentaire",
+    description: "Systèmes de traitement adaptés aux besoins spécifiques de l'industrie alimentaire.",
+    image: "/images/aliment.jpg"
+  },
+  {
+    title: "Industrie de pâtes et papiers",
+    description: "Solutions innovantes pour le traitement des eaux dans l'industrie papetière.",
+    image: "/images/alimentaire.jpg"
+  },
+  {
+    title: "Municipalités",
+    description: "Services complets de traitement des eaux pour les municipalités.",
+    image: "/images/mairie.jpg"
+  },
+  {
+    title: "Industrie de construction",
+    description: "Solutions de traitement des eaux pour les projets de construction.",
+    image: "/images/construction.jpg"
+  }
+];
+
+const technologies = [
+  {
+    title: "Prétraitement",
+    description: "Le prétraitement est la première étape du processus de traitement des eaux usées.Le prétraitement a pour but d’éliminer les plus gros déchets solides et les matières solides. Il permet de réduire les charges polluantes et protéger toutes les étapes ultérieures de la chaine de traitement",
+    image: "/images/pretreatment.jpg"
+  },
+  {
+    title: "Traitement physico-chimique",
+    description: "Processus de coagulation, floculation et décantation pour l'élimination des particules solides.",
+    image: "/images/chemical.jpg"
+  },
+  {
+    title: "Traitement biologique",
+    description: "Utilisation de micro-organismes pour éliminer les polluants organiques dissous.",
+    image: "/images/biological.jpg"
+  },
+  {
+    title: "Clarification",
+    description: "La clarification est une étape essentielle dans un procédé de traitement des eaux usées. Il permet d’éliminer les solides en suspension par sédimentation gravitaire ou flottation.",
+    image: "/images/clarification.jpg"
+  },
+  {
+    title: "Filtration",
+    description: "La filtration est le processus par lequel les particules solides sont éliminées à l'aide d'un média filtrant qui laisse passer le fluide tout en retenant les particules solides.La filtration peut éliminer ou réduire la concentration des particules en suspension, de parasites, de bactéries, d'algues, de virus, de champignons et d'autres contaminants chimiques et biologiques.",
+    image: "/images/purification.jpg"
+  },
+  {
+    title: "Désinfection et Oxydation",
+    description: "L'ozone est une solution verte utilisée principalement dans le traitement tertiaire. Il est produit in-situ, et il est formé uniquement d’oxygène et entièrement naturel. Il n'y a pas de sous-produits formés lors de la formation de l’ozone. Il est plus efficace pour désinfecter les bactéries et les virus dans les eaux usées. En outre, l'ozone est également utilisé pour éliminer la couleur, les micropolluants et l’oxydation des composés responsables des odeurs dans les eaux usées.",
+    image: "/images/oxydation.jpg"
+  }
+
+];
+---
+
+<Layout title="Applications - AcquaPro">
+  <div class="relative bg-cover bg-center h-[500px]" style={{backgroundImage: `url('images/mainhero.jpg')`}}>
+    <!-- Couverture semi-transparente pour améliorer la lisibilité du texte -->
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+
+    <div class="container mx-auto px-6 py-20 relative z-10 text-white text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Nos Applications</h1>
+      <p class="text-xl max-w-3xl mx-auto mb-8">
+        Vos spécialistes en traitement des eaux dans différents secteurs d'activités.
+      </p>
+      <!-- Bouton CTA "En savoir plus" -->
+      <a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-lg transition duration-300">
+        En savoir plus
+      </a>
+     
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Secteurs d'activités</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {applications.map(app => (
+        <ApplicationCard {...app} />
+      ))}
+    </div>
+  </div>
+</section>
+    <div class="container mx-auto px-6">
+       <h2 class="text-3xl font-bold text-center mb-12">Secteurs d'activités</h2>
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+         {applications.map(app => (
+           <ApplicationCard {...app} />
+         ))}
+       </div>
+     </div>
+   </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Nos solutions technologiques</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {technologies.map(tech => (
+          <ApplicationCard {...tech} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

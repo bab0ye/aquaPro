@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+const services = [
+  {
+    title: "Service de chimie des procédés",
+    description: "L'utilisation du bon type et de la bonne quantité de produits chimiques est la clé d'un processus de traitement des eaux sûr, efficace et durable.",
+    image: "/images/chemistry-lab.jpg"
+  },
+  {
+    title: "Service d'ingénierie",
+    description: "Notre équipe d'ingénierie offre un soutien pour l'élaboration de solutions adaptées pour les besoins du client en traitement des eaux.",
+    image: "/images/engineering.jpg"
+  },
+  {
+    title: "Service d'opération",
+    description: "Nos opérateurs disposent de solides expériences nécessaires pour mener à terme les projets et offrir un travail de qualité.",
+    image: "/images/biological.webp"
+  }
+];
+---
+
+<Layout title="Services - AcquaPro">
+		<div class="relative bg-cover bg-center h-[500px]" style={{backgroundImage: `url('images/mainhero.jpg')`}}>
+			<div class="absolute inset-0 bg-black opacity-60"></div>
+			<div class="container mx-auto px-6 py-20 relative z-10 text-white text-center">
+				<h1 class="text-4xl md:text-5xl font-bold mb-6">Nos services</h1>
+				<p class="text-xl max-w-3xl mx-auto mb-8">
+					Vos spécialistes pour la gestion et l’optimisation de vos unités en traitement des eaux.
+				</p>
+				<!-- Bouton CTA "En savoir plus" -->
+				<a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-6 rounded-lg transition duration-300">
+				  En savoir plus
+				</a>
+				
+			   
+			  </div>
+	</div>
+
+	<section class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="grid md:grid-cols-3 gap-8">
+				{services.map(service => (
+					<ServiceCard {...service} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-gray-50 py-16">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold text-center mb-12">Notre expertise</h2>
+			<div class="grid md:grid-cols-2 gap-12">
+				<div>
+					<img 
+						src="/images/expertise.webp" 
+						alt="Expertise AcquaPro"
+						class="rounded-lg shadow-lg w-full h-64 object-cover"
+					/>
+				</div>
+				<div>
+					<h3 class="text-2xl font-bold mb-4">Une approche complète</h3>
+					<p class="text-lg mb-6">
+						Notre équipe offre une gamme complète de services d'études et d'accompagnement technique pour répondre aux besoins spécifiques du client en matière de traitement des eaux.
+					</p>
+					<ul class="space-y-4">
+						<li class="flex items-center">
+							<svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							Diagnostic des unités de traitement des eaux
+						</li>
+						<li class="flex items-center">
+							<svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							Ingénierie conceptuelle et détaillée
+						</li>
+						<li class="flex items-center">
+							<svg class="w-6 h-6 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+							</svg>
+							Surveillance de travaux
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

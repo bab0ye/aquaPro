@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const careers = [
+  {
+    title: "Ingénieur en traitement des eaux",
+    type: "Temps plein",
+    location: "Montréal, Canada"
+  },
+  {
+    title: "Technicien en laboratoire",
+    type: "Temps plein",
+    location: "Québec, Canada"
+  },
+  {
+    title: "Opérateur de traitement des eaux",
+    type: "Temps plein",
+    location: "Toronto, Canada"
+  }
+];
+---
+
+<Layout title="Carrières et Contact - AcquaPro">
+  <!--<div class="bg-gradient-to-r text-white py-20" style="background: linear-gradient(to right, #F9FAFB, #1E40AF);"> -->
+    <div class="relative bg-cover bg-center h-[600px]" style={{backgroundImage: `url('images/mainhero.jpg')`}}>
+
+      <div class="container mx-auto px-6 py-20 relative z-10 text-white text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Carrières et Contact</h1>
+      <p class="text-xl max-w-3xl">
+        Rejoignez notre équipe d'experts ou contactez-nous pour vos projets
+      </p>
+    </div>
+  </div>
+
+  <section class="py-16">
+    
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Formulaire de contact -->
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold mb-6">Contactez-nous</h2>
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                required
+              />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+              <select
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                required
+              >
+                <option value="">Sélectionnez un sujet</option>
+                <option value="business">Opportunité d'affaires</option>
+                <option value="career">Carrière</option>
+                <option value="support">Support technique</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Envoyer le message
+            </button>
+          </form>
+        </div>
+
+        <!-- Informations de contact -->
+        <div>
+          <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-bold mb-6">Nos bureaux</h2>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-bold text-lg">Canada (Siège social)</h3>
+                <p>123 Rue de l'Innovation</p>
+                <p>Montréal, QC H1X 2Y3</p>
+                <p>Tél: +1 (514) 555-0123</p>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Email</h3>
+                <p>info@acquapro.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-6">Heures d'ouverture</h2>
+            <div class="space-y-2">
+              <p><span class="font-bold">Lundi - Vendredi:</span> 8h30 - 17h00</p>
+              <p><span class="font-bold">Samedi - Dimanche:</span> Fermé</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Opportunités de carrière</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {careers.map(career => (
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-blue-800">{career.title}</h3>
+            <p class="text-gray-600 mb-2">{career.type}</p>
+            <p class="text-gray-600 mb-4">{career.location}</p>
+            <a
+              href="#"
+              class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Postuler
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="mailto:careers@acquapro.com"
+          class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Envoyer une candidature spontanée
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

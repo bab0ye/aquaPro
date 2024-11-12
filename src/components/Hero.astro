@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="relative h-[80vh] flex justify-center items-center bg-cover bg-center" style={{backgroundImage: `url('images/mainhero.jpg')`}}>
+
+  <div class="absolute inset-0 bg-blue-900/40"></div>
+  <div class="relative z-10 text-center text-white px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">{title}</h1>
+    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">{subtitle}</p>
+    <a 
+      href="/contact" 
+      class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+    >
+      Contactez-nous
+    </a>
+  </div>
+</section>
