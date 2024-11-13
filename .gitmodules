@@ -1,0 +1,4 @@
+[submodule "aquaPro"]
+  path = aquaPro
+  url = https://github.com/bab0ye/aquaPro.git
+  branch = master
